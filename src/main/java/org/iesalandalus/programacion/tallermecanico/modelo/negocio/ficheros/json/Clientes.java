@@ -41,7 +41,7 @@ public class Clientes implements IClientes {
     }
 
     //Deserializamos (leemos) el fichero de clientes
-    private List<Cliente> leer() {
+    public List<Cliente> leer() {
         File fichero = new File(FICHERO_CLIENTES);
         List<Cliente> clientes = new ArrayList<>();
         if (fichero.exists()) {
@@ -55,7 +55,7 @@ public class Clientes implements IClientes {
     }
 
     //Serializamos (escribimos) el fichero
-    private void escribir(List<Cliente> clientes) {
+    public void escribir(List<Cliente> clientes) {
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(FICHERO_CLIENTES), clientes);
         } catch (IOException e) {
